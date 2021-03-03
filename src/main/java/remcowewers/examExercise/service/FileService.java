@@ -22,7 +22,7 @@ public class FileService {
     DemodropService demodropService;
 
 
-    public static String uploadDirectory = System.getProperty("user.dir") + "/uploads/";
+    public static String uploadDirectory = System.getProperty("user.dir") + "/examExercise/uploads/";
     public void uploadFile(MultipartFile file, Demodrop demo) throws IOException {
         UUID uuid = UUID.randomUUID();
         demo.setFileName(uuid + ".mp3");

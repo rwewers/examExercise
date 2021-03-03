@@ -1,5 +1,8 @@
 package remcowewers.examExercise.controller;
 
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import remcowewers.examExercise.payload.request.UpdateUserRequest;
 import remcowewers.examExercise.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Map;
 
 @CrossOrigin(origins = "*", maxAge = 3600)

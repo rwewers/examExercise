@@ -17,10 +17,11 @@ import remcowewers.examExercise.service.UserService2;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/files")
+@RequestMapping("/api/fileUpload")
 public class FileController {
 
     @Autowired
@@ -59,5 +60,12 @@ public class FileController {
                 .contentLength(file.length())
                 .contentType(MediaType.parseMediaType("audio/mpeg")).body(resource);
         return responseEntity;
+    }
+//
+    @PostMapping ("/user_id")
+    public ResponseEntity<Object> uploadFile(@RequestParam("userId") long userId) throws IOException  {
+        List<Demodrop> demo = userService.getDemosByUserId(userId);
+        System.out.println(demo);
+        return ResponseEntity.ok().body(userService.getDemosByUserId(userId));
     }
 }
