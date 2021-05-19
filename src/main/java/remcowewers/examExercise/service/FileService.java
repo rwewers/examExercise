@@ -22,7 +22,7 @@ public class FileService {
     DemodropService demodropService;
 
 
-    public static String uploadDirectory = System.getProperty("user.dir") + "/examExercise/uploads/";
+    public static String uploadDirectory = System.getProperty("user.dir") + "/uploads/";
     public void uploadFile(MultipartFile file, Demodrop demo) throws IOException {
         UUID uuid = UUID.randomUUID();
         demo.setFileName(uuid + ".mp3");
@@ -30,14 +30,14 @@ public class FileService {
         demodropService.saveDemo(demo);
     }
 
-//    public void deleteById(long demoId) {
-//        Demodrop demo = demodropService.getDemoById(demoId);
-//        String fileName = demo.getFileName();
-//        File audioFile = new File(uploadDirectory + fileName);
-//        if (audioFile.delete()) {
-//            System.out.println("Deleted the file: " + audioFile.getName());
-//        } else {
-//            System.out.println("Failed to delete the file.");
-//        }
-//    }
+    public void deleteById(long demoId) {
+        Demodrop demo = demodropService.getDemoById(demoId);
+        String fileName = demo.getFileName();
+        File audioFile = new File(uploadDirectory + fileName);
+        if (audioFile.delete()) {
+            System.out.println("Deleted the file: " + audioFile.getName());
+        } else {
+            System.out.println("Failed to delete the file.");
+        }
+    }
 }
