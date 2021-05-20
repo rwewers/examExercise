@@ -26,6 +26,9 @@ public class DatabaseFiller implements CommandLineRunner {
         Set<String> rollen = new HashSet<>();
         rollen.add("admin");
 
+        Set<String> rollen1 = new HashSet<>();
+        rollen1.add("USER");
+
         SignupRequest admin = new SignupRequest();
         admin.setUsername("nick");
         admin.setEmail("nick@admin.nl");
@@ -33,21 +36,30 @@ public class DatabaseFiller implements CommandLineRunner {
         admin.setRole(rollen);
         authorizationService.registerUser(admin);
 
-        SignupRequest user = new SignupRequest();
-        user.setUsername("sjaak");
-        user.setEmail("sjaak@sjaak.nl");
-        user.setPassword("sjaaksjaak");
-        rollen.add("user");
-        user.setRole(rollen);
-        authorizationService.registerUser(user);
+        SignupRequest user1 = new SignupRequest();
+        user1.setUsername("wemsu");
+        user1.setEmail("remco@wewrs.nl");
+        user1.setPassword("Speed1994!");
+        user1.setCountry("Netherlands");
+        user1.setFacebook("None");
+        user1.setInstagram("None");
+        user1.setFirst_name("Remco");
+        user1.setLast_name("Wewers");
+        user1.setRole(rollen1);
+        authorizationService.registerUser(user1);
 
-        SignupRequest superuser = new SignupRequest();
-        superuser.setUsername("superuser");
-        superuser.setEmail("super@user.nl");
-        superuser.setPassword("123456");
-        rollen.add("admin");
-        superuser.setRole(rollen);
-        authorizationService.registerUser(superuser);
+        SignupRequest user2 = new SignupRequest();
+        user2.setUsername("dansu");
+        user2.setEmail("danivanrijt13@gmail.com");
+        user2.setPassword("Speed1994!");
+        user2.setCountry("Netherlands");
+        user2.setFacebook("None");
+        user2.setInstagram("None");
+        user2.setFirst_name("Dani");
+        user2.setLast_name("Van Rijt");
+        user2.setRole(rollen1);
+        authorizationService.registerUser(user2);
+
 
 
 
