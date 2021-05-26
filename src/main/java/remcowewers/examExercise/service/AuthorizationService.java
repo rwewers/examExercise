@@ -44,6 +44,7 @@ public class AuthorizationService {
 
 
 
+
     @Autowired
     public void setEncoder(PasswordEncoder passwordEncoder) {
         this.encoder = passwordEncoder;
@@ -87,6 +88,7 @@ public class AuthorizationService {
                     .badRequest()
                     .body(new MessageResponse("Error: Email is already in use!"));
         }
+
 
 
         // Create new user's account

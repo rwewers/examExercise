@@ -1,21 +1,16 @@
 package remcowewers.examExercise.controller;
 
 
-import org.springframework.http.HttpStatus;
-import remcowewers.examExercise.domain.Demodrop;
-import remcowewers.examExercise.domain.User;
 import remcowewers.examExercise.payload.request.LoginRequest;
 import remcowewers.examExercise.payload.request.SignupRequest;
 import remcowewers.examExercise.payload.response.JwtResponse;
 import remcowewers.examExercise.payload.response.MessageResponse;
 import remcowewers.examExercise.service.AuthorizationService;
+import remcowewers.examExercise.service.EmailService;
 
-import remcowewers.examExercise.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.IOException;
 
 
 /**
@@ -39,6 +34,8 @@ public class AuthController {
     AuthorizationService authorizationService;
 
 
+    @Autowired
+    EmailService emailService;
 
     @PostMapping("/signin")
     public ResponseEntity<JwtResponse> authenticateUser(@RequestBody LoginRequest loginRequest) {
@@ -47,15 +44,11 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<MessageResponse> registerUser(@RequestBody SignupRequest signUpRequest) {
+        emailService.signUpEmail();
         return authorizationService.registerUser(signUpRequest);
     }
 
-//    @PostMapping("/demodroptest")
-//    public ResponseEntity<MessageResponse> testDemoDrop(@RequestBody DemodropRequest demodropRequest) {
-//        System.out.println(demodropRequest);
-//
-//        return demodropService.testDemodrop(demodropRequest);
-//    }
+
 
 
 

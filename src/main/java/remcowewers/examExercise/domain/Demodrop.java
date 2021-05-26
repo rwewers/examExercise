@@ -21,8 +21,22 @@ public class Demodrop {
     private String songTitle;
     private String artist;
 
+    @OneToOne(mappedBy = "demo", cascade = CascadeType.ALL)
+    private Comment comment;
 
     public Demodrop() {
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Comment getComment() {
+        return comment;
+    }
+
+    public void setComment(Comment comment) {
+        this.comment = comment;
     }
 
     public Long getId() {
@@ -52,7 +66,6 @@ public class Demodrop {
     public void setArtist(String artist) {
         this.artist = artist;
     }
-
 
     //
 //    @Override
