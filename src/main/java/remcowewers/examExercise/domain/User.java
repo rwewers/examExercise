@@ -42,14 +42,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
-    public void addDemo(Demodrop demo) {
-        demo.setUser(this);
-        this.demos.add(demo);
-    }
-    public void removeDemo(Demodrop demo) {
-        demo.setUser(null);
-        this.demos.remove(demo);
-    }
+
     public void setUserId(long userId) {
         this.userId = userId;
     }

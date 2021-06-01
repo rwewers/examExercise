@@ -1,24 +1,16 @@
 package remcowewers.examExercise.controller;
 
-import org.springframework.core.io.InputStreamResource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import remcowewers.examExercise.domain.Demodrop;
 import remcowewers.examExercise.domain.User;
-import remcowewers.examExercise.payload.request.UpdateUserRequest;
-import remcowewers.examExercise.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import remcowewers.examExercise.service.UserService2;
+import remcowewers.examExercise.service.UserService;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -26,7 +18,7 @@ import java.util.Map;
 public class UserController {
 
     @Autowired
-    private UserService2 userService;
+    private UserService userService;
 
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")

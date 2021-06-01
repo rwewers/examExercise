@@ -3,7 +3,6 @@ package remcowewers.examExercise.controller;
 import remcowewers.examExercise.domain.Demodrop;
 import remcowewers.examExercise.domain.User;
 import remcowewers.examExercise.service.FileService;
-import remcowewers.examExercise.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
@@ -12,7 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import remcowewers.examExercise.service.UserService2;
+import remcowewers.examExercise.service.UserService;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,7 +28,7 @@ public class FileController {
     FileService fileService;
 
     @Autowired
-    UserService2 userService;
+    UserService userService;
 
     @PostMapping
     public ResponseEntity<Object> uploadFile(@RequestParam("file") MultipartFile file,

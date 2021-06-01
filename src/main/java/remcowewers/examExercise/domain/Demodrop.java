@@ -67,16 +67,5 @@ public class Demodrop {
         this.artist = artist;
     }
 
-    //
-//    @Override
-//    public String toString() {
-//        return "Demo{" +
-//                "id=" + id +
-//                ", user=" + user +
-//                ", fileName='" + fileName + '\'' +
-//                ", songTitle='" + songTitle + '\'' +
-//                ", artist='" + artist + '\'' +
-//
-//                '}';
-//    }
+
 }
