@@ -6,7 +6,6 @@ import remcowewers.examExercise.payload.request.SignupRequest;
 import remcowewers.examExercise.payload.response.JwtResponse;
 import remcowewers.examExercise.payload.response.MessageResponse;
 import remcowewers.examExercise.service.AuthorizationService;
-import remcowewers.examExercise.service.EmailService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -34,8 +33,7 @@ public class AuthController {
     AuthorizationService authorizationService;
 
 
-    @Autowired
-    EmailService emailService;
+
 
     @PostMapping("/signin")
     public ResponseEntity<JwtResponse> authenticateUser(@RequestBody LoginRequest loginRequest) {
@@ -44,7 +42,7 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<MessageResponse> registerUser(@RequestBody SignupRequest signUpRequest) {
-        emailService.signUpEmail();
+
         return authorizationService.registerUser(signUpRequest);
     }
 
