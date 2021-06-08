@@ -87,6 +87,7 @@ public class AuthorizationService {
             return ResponseEntity
                     .badRequest()
                     .body(new MessageResponse("Error: Email is already in use!"));
+
         }
 
 

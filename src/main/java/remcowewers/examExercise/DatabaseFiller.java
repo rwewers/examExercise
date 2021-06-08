@@ -38,7 +38,7 @@ public class DatabaseFiller implements CommandLineRunner {
 
         SignupRequest user1 = new SignupRequest();
         user1.setUsername("wemsu");
-        user1.setEmail("remco@wewrs.nl");
+        user1.setEmail("remco@wewers.nl");
         user1.setPassword("Speed1994!");
         user1.setCountry("Netherlands");
         user1.setFacebook("None");
