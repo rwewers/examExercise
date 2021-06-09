@@ -132,4 +132,9 @@ public class User {
                 ", roles=" + roles +
                 '}';
     }
+
+    public void addDemo(Demodrop demo) {
+        demo.setUser(this);
+        this.demos.add(demo);
+    }
 }

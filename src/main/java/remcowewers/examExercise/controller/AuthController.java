@@ -34,7 +34,6 @@ public class AuthController {
 
 
 
-
     @PostMapping("/signin")
     public ResponseEntity<JwtResponse> authenticateUser(@RequestBody LoginRequest loginRequest) {
         return authorizationService.authenticateUser(loginRequest);
@@ -42,7 +41,6 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<MessageResponse> registerUser(@RequestBody SignupRequest signUpRequest) {
-
         return authorizationService.registerUser(signUpRequest);
     }
 
