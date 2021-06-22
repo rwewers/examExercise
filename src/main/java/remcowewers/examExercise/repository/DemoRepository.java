@@ -9,6 +9,8 @@ import java.util.List;
 public interface DemoRepository extends JpaRepository<Demodrop, Long> {
 
     List<Demodrop> findDemosByUser(User user);
+
     List<Demodrop> findAllByOrderByUser();
+
     List<Demodrop> findAllByUserUserId(long userId);
 }

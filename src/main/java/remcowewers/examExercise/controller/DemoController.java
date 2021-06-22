@@ -33,13 +33,11 @@ public class DemoController {
         return ResponseEntity.ok(demo);
     }
 
-
     @DeleteMapping("/{demoId}")
     public ResponseEntity<?> deleteDemo(@PathVariable("demoId") long demoId) throws IOException {
         demoService.deleteDemo(demoId);
-        return ResponseEntity.ok("demo " + demoId+ " deleted");
+        return ResponseEntity.ok("demo " + demoId + " deleted");
     }
-
 }
 
 

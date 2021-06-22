@@ -1,7 +1,5 @@
 package remcowewers.examExercise.domain;
-
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,8 +7,8 @@ public class Role {
 
     @Id
     @GeneratedValue(
-            strategy= GenerationType.AUTO,
-            generator="native"
+            strategy = GenerationType.AUTO,
+            generator = "native"
     )
     @GenericGenerator(
             name = "native",

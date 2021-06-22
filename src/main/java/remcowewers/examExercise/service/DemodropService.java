@@ -23,6 +23,7 @@ public class DemodropService {
     FileService fileService;
 
     private DemoRepository demoRepository;
+
     @Autowired
     public void setDemoRepository(DemoRepository demoRepository) {
         this.demoRepository = demoRepository;
@@ -35,7 +36,7 @@ public class DemodropService {
 
     public List<Demodrop> getAllDemos() {
         List<Demodrop> demos = demoRepository.findAllByOrderByUser();
-        for (Demodrop demo:demos) {
+        for (Demodrop demo : demos) {
             demo.getUser().setDemos(null);
         }
         return demos;

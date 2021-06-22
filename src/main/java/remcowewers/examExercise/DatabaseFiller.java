@@ -30,9 +30,14 @@ public class DatabaseFiller implements CommandLineRunner {
         rollen1.add("USER");
 
         SignupRequest admin = new SignupRequest();
-        admin.setUsername("nick");
-        admin.setEmail("nick@admin.nl");
-        admin.setPassword("nicknick");
+        admin.setUsername("dondiablo");
+        admin.setEmail("info@dondiablo.com");
+        admin.setPassword("SuperAdmin123!");
+        admin.setCountry("Netherlands");
+        admin.setFacebook("https://nl-nl.facebook.com/OfficialDonDiablo");
+        admin.setInstagram("https://www.instagram.com/dondiablo/?hl=nl");
+        admin.setFirst_name("Don");
+        admin.setLast_name("Diablo");
         admin.setRole(rollen);
         authorizationService.registerUser(admin);
 

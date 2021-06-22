@@ -54,12 +54,4 @@ public class UserController {
         }
         return new ResponseEntity<>(user.getEmail(), HttpStatus.OK);
     }
-
-
-
-
-
-
-
-
 }

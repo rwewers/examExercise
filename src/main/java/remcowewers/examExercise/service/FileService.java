@@ -1,6 +1,6 @@
 package remcowewers.examExercise.service;
 
-import  remcowewers.examExercise.domain.Demodrop;
+import remcowewers.examExercise.domain.Demodrop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,6 +18,7 @@ public class FileService {
 
 
     public static String uploadDirectory = System.getProperty("user.dir") + "/uploads/";
+
     public void uploadFile(MultipartFile file, Demodrop demo) throws IOException {
         UUID uuid = UUID.randomUUID();
         demo.setFileName(uuid + ".mp3");

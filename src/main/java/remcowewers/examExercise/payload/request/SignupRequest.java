@@ -68,8 +68,6 @@ public class SignupRequest {
     }
 
 
-
-
     public String getCountry() {
         return country;
     }

@@ -6,6 +6,7 @@ import remcowewers.examExercise.domain.Demodrop;
 import remcowewers.examExercise.exceptions.CommentNotFoundException;
 import remcowewers.examExercise.repository.CommentRepository;
 import remcowewers.examExercise.domain.Comment;
+
 import java.util.List;
 
 @Service
@@ -24,7 +25,7 @@ public class CommentService {
     public Comment getCommentById(long id) {
 
         Comment comment = commentRepository.findById(id).orElse(null);
-        if(comment == null) throw new CommentNotFoundException(id);
+        if (comment == null) throw new CommentNotFoundException(id);
         return comment;
     }
 

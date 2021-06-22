@@ -23,7 +23,6 @@ public class CommentController {
     @Autowired
     private DemodropService demoService;
 
-
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getAllComments() throws IOException {
@@ -46,7 +45,7 @@ public class CommentController {
     }
 
     @PutMapping("/{commentId}")
-    public ResponseEntity<?> updateComment(@PathVariable("commentId") long commentId,@RequestBody CommentRequest commentRequest) {
+    public ResponseEntity<?> updateComment(@PathVariable("commentId") long commentId, @RequestBody CommentRequest commentRequest) {
         Demodrop demo = demoService.getDemoById(commentRequest.getDemoId());
         Comment comment = new Comment();
         comment.setCommentId(commentId);

@@ -36,7 +36,7 @@ public class UserDetailsImpl implements UserDetails {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
-        this.country=country;
+        this.country = country;
         this.facebook = facebook;
         this.instagram = instagram;
         this.password = password;

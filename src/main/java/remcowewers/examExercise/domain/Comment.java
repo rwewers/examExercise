@@ -11,7 +11,7 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long commentId;
-    @Column(columnDefinition="TEXT")
+    @Column(columnDefinition = "TEXT")
     String message;
     boolean viewed;
 
