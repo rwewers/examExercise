@@ -44,24 +44,24 @@ public class DatabaseFiller implements CommandLineRunner {
         SignupRequest user1 = new SignupRequest();
         user1.setUsername("wemsu");
         user1.setEmail("remco@wewers.nl");
-        user1.setPassword("Speed1994!");
+        user1.setPassword("Novi21!");
         user1.setCountry("Netherlands");
-        user1.setFacebook("None");
-        user1.setInstagram("None");
+        user1.setFacebook("https://nl-nl.facebook.com/remco.wewers");
+        user1.setInstagram("https://www.instagram.com/remcowewers/?hl=nl");
         user1.setFirst_name("Remco");
         user1.setLast_name("Wewers");
         user1.setRole(rollen1);
         authorizationService.registerUser(user1);
 
         SignupRequest user2 = new SignupRequest();
-        user2.setUsername("dansu");
-        user2.setEmail("danivanrijt13@gmail.com");
-        user2.setPassword("Speed1994!");
+        user2.setUsername("eekjenova");
+        user2.setEmail("n.eeken@novi-hogescool.nl");
+        user2.setPassword("varBanaan21!");
         user2.setCountry("Netherlands");
         user2.setFacebook("None");
         user2.setInstagram("None");
-        user2.setFirst_name("Dani");
-        user2.setLast_name("Van Rijt");
+        user2.setFirst_name("Nova");
+        user2.setLast_name("Eeken");
         user2.setRole(rollen1);
         authorizationService.registerUser(user2);
 

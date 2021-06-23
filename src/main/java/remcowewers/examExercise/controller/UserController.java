@@ -46,12 +46,5 @@ public class UserController {
         return ResponseEntity.ok(demos);
     }
 
-    @GetMapping("/check-up/{email}")
-    public ResponseEntity<?> getUserByUsername(@PathVariable("email") String email) throws IOException {
-        User user = userService.getUserByUsername(email);
-        if (user == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(user.getEmail(), HttpStatus.OK);
-    }
+
 }

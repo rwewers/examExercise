@@ -62,8 +62,8 @@ public class FileController {
 
     }
 
-    @PostMapping("/user_id")
-    public ResponseEntity<Object> uploadFile(@RequestParam("userId") long userId) throws IOException {
+    @PostMapping("/{userId}")
+    public ResponseEntity<Object> uploadFile(@PathVariable("userId") long userId) throws IOException {
         List<Demodrop> demo = userService.getDemosByUserId(userId);
         System.out.println(demo);
         return ResponseEntity.ok().body(userService.getDemosByUserId(userId));

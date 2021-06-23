@@ -1,7 +1,7 @@
 package remcowewers.examExercise.controller;
 
 import remcowewers.examExercise.domain.User;
-import  remcowewers.examExercise.service.UserService;
+import remcowewers.examExercise.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,6 @@ public class UserControllerIntegrationTest {
     @MockBean
     UserService userService;
 
-    // Arrange
     @BeforeEach
     public void setUpt() {
         User user1 = new User();
@@ -49,13 +48,12 @@ public class UserControllerIntegrationTest {
         User user2 = new User();
         user2.setUserId(1L);
         user2.setEmail("marcel@wewers.nl");
-        user2.setFirstName("<Marcel>");
+        user2.setFirstName("Marcel");
         user2.setLastName("Wewers");
 
         allUsers.add(user1);
         allUsers.add(user2);
     }
-
 
 
     @Test
@@ -66,9 +64,7 @@ public class UserControllerIntegrationTest {
                 .andExpect(unauthenticated());
     }
 
-    /*
-    Database should run to invoke this test
-     */
+
     @Test
     void endPointGetUserByUsernameIsStatusIsNotFound() throws Exception {
         mvc.perform(
@@ -76,6 +72,4 @@ public class UserControllerIntegrationTest {
                 .andExpect(status().isNotFound())
                 .andExpect(unauthenticated());
     }
-
-
 }

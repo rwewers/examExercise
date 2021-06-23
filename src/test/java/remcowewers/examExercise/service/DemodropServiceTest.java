@@ -29,13 +29,8 @@ class DemodropServiceTest {
     @Test
     void serviceShouldThrowExceptionWhenDemoNotFoundById() {
 
-        // Arrange
         Mockito.when(demoRepository.findById(1L)).thenReturn(Optional.empty());
-
-        // Assert
         Assertions.assertThrows(DemoNotFoundException.class, () -> {
-
-            // Act
             demoService.getDemoById(1L);
 
         });
@@ -44,13 +39,8 @@ class DemodropServiceTest {
     @Test
     void deleteDemoShouldThrowExceptionWhenDemoNotExists() {
 
-        // Arrange
         Mockito.when(demoRepository.existsById(1L)).thenReturn(false);
-
-        // Assert
         Assertions.assertThrows(DemoNotFoundException.class, () -> {
-
-            // Act
             demoService.deleteDemo(1L);
 
         });
