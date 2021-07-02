@@ -9,7 +9,6 @@ import java.util.Set;
 
 public class SignupRequest {
 
-
     @NotBlank
     private String username;
 
@@ -35,7 +34,6 @@ public class SignupRequest {
     @Size(min = 3, max = 20)
     private String instagram;
 
-
     public String getFirst_name() {
         return first_name;
     }
@@ -52,12 +50,14 @@ public class SignupRequest {
         this.last_name = last_name;
     }
 
-    private Set<String> role;
-
     @NotBlank
     private String password;
 
     private Demodrop demodrops;
+
+
+
+    private Set<String> role;
 
     public Demodrop getDemodrops() {
         return demodrops;
