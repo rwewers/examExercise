@@ -125,8 +125,6 @@ public class AuthorizationService {
     }
 
     public ResponseEntity<JwtResponse> authenticateUser(LoginRequest loginRequest) {
-
-
         String test = "test";
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
@@ -145,7 +143,7 @@ public class AuthorizationService {
                 userDetails.getUsername(),
                 userDetails.getEmail(),
                 roles));
-        // hier vind je jwt token
+
     }
 
 }
