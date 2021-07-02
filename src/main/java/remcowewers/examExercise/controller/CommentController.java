@@ -50,7 +50,6 @@ public class CommentController {
         Comment comment = new Comment();
         comment.setCommentId(commentId);
         comment.setMessage(commentRequest.getMessage());
-        comment.setViewed(commentRequest.isViewed());
         comment.setDemo(demo);
         commentService.saveComment(comment);
         return ResponseEntity.ok(comment);

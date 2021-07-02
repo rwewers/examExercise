@@ -7,7 +7,6 @@ public class CommentRequest {
     private long commentId;
     @Lob
     private String message;
-    private boolean viewed;
     private long demoId;
 
     public long getCommentId() {
@@ -20,14 +19,6 @@ public class CommentRequest {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public boolean isViewed() {
-        return viewed;
-    }
-
-    public void setViewed(boolean viewed) {
-        this.viewed = viewed;
     }
 
     public long getDemoId() {
@@ -43,7 +34,6 @@ public class CommentRequest {
         return "CommentRequest{" +
                 "commentId=" + commentId +
                 ", message='" + message + '\'' +
-                ", viewed=" + viewed +
                 ", demoId=" + demoId +
                 '}';
     }

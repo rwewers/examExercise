@@ -22,6 +22,14 @@ public class CommentService {
         return commentRepository.findAll();
     }
 
+    public void deleteComment(long id) {
+        if (!commentRepository.existsById(id)) throw new CommentNotFoundException(id);
+        Comment comment = commentRepository.findById(id).orElse(null);
+        Demodrop demo = comment.getDemo();
+        demo.setComment(null);
+        commentRepository.deleteById(id);
+    }
+
     public Comment getCommentById(long id) {
 
         Comment comment = commentRepository.findById(id).orElse(null);
@@ -33,11 +41,5 @@ public class CommentService {
         commentRepository.save(comment);
     }
 
-    public void deleteComment(long id) {
-        if (!commentRepository.existsById(id)) throw new CommentNotFoundException(id);
-        Comment comment = commentRepository.findById(id).orElse(null);
-        Demodrop demo = comment.getDemo();
-        demo.setComment(null);
-        commentRepository.deleteById(id);
-    }
+
 }

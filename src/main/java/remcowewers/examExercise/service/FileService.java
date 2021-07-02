@@ -31,9 +31,9 @@ public class FileService {
         String fileName = demo.getFileName();
         File audioFile = new File(uploadDirectory + fileName);
         if (audioFile.delete()) {
-            System.out.println("Deleted the file: " + audioFile.getName());
+            System.out.println("Song is deleted: " + audioFile.getName());
         } else {
-            System.out.println("Failed to delete the file.");
+            System.out.println("Failed to delete the song..");
         }
     }
 }
